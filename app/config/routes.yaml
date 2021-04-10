@@ -1,23 +1,29 @@
 get-http-service-settings:
     path: api/services/http/settings
+    methods: GET
     controller: App\Controller\Api\Services\HttpService\HttpServiceSettingsController::getSettings
 
 get-rest-api-service-settings:
     path: api/services/restapi/settings
+    methods: GET
     controller: App\Controller\Api\Services\RestApiService\RestApiServiceSettingsController::getSettings
 
 get-grpc-settings:
     path: api/services/grpc/settings
+    methods: GET
     controller: App\Controller\Api\Services\GrpcService\GrpcServiceSettingsController::getSettings
 
 set-http-service-settings:
     path: api/services/http/settings
+    methods: POST
     controller: App\Controller\Api\Services\HttpService\HttpServiceSettingsController::setSettings
 
 set-rest-api-service-settings:
     path: api/services/restapi/settings
+    methods: POST
     controller: App\Controller\Api\Services\RestApiService\RestApiServiceSettingsController::setSettings
 
 set-grpc-settings:
     path: api/services/grpc/settings
+    methods: POST
     controller: App\Controller\Api\Services\GrpcService\GrpcServiceSettingsController::setSettings
