@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <h1>Settings of HttpService</h1>
+        <form action="/services/http" method="POST">
+            <fieldset>
+                <legend>Fields</legend>
+                <label for="field1">field1</label>
+                <input type="text" name="fields[field1]" id="field1">
+                <label for="field2">field2</label>
+                <input type="text" name="fields[field2]" id="field2">
+                <label for="field3">field3</label>
+                <input type="text" name="fields[field3]" id="field3">
+            </fieldset>
+            <button type="submit">Submit</button>
+        </form>
+        {% endblock %}
+    </body>
+</html>

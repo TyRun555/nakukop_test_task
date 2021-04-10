@@ -25,9 +25,9 @@ class HttpSettings extends BaseServiceSettings implements ServiceSettingsInterfa
     public function getFields(): array
     {
         return [
-            'field1' => $this->field1,
-            'field2' => $this->field2,
-            'field3' => $this->field3,
+            'field1' => $this->field1 ?? null,
+            'field2' => $this->field2 ?? null,
+            'field3' => $this->field3 ?? null,
         ];
     }
 

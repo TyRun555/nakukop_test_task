@@ -48,7 +48,7 @@ class HttpRequest implements RequestInterface
             $httpResponse = ResponseFactory::createHttpResponse();
             $httpResponse->setSettings($response);
         } catch (\Throwable $e) {
-            return ResponseFactory::createGrpcResponse();
+            return ResponseFactory::createHttpResponse();
         }
 
         return $response;

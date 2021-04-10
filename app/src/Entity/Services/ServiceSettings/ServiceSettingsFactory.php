@@ -10,17 +10,17 @@ use App\Entity\Services\ServiceSettings\ServiceSettingsFactory\RestApiSettings;
 
 class ServiceSettingsFactory
 {
-    public function createGrpcSettings(): ServiceSettingsInterface
+    public static function createGrpcSettings(): ServiceSettingsInterface
     {
         return new GrpcSettings();
     }
 
-    public function createHttpSettings(): ServiceSettingsInterface
+    public static function createHttpSettings(): ServiceSettingsInterface
     {
         return new HttpSettings();
     }
 
-    public function createRestApiSettings(): ServiceSettingsInterface
+    public static function createRestApiSettings(): ServiceSettingsInterface
     {
         return new RestApiSettings();
     }

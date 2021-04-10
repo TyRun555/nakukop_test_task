@@ -6,21 +6,23 @@ namespace App\Entity\Services\Response\ResponseFactory;
 
 use App\Entity\Services\Response\ResponseInterface;
 use App\Entity\Services\ServiceSettings;
+use App\Entity\Services\ServiceSettings\ServiceSettingsFactory;
+use App\Entity\Services\ServiceSettings\ServiceSettingsInterface;
 
 class HttpResponse implements ResponseInterface
 {
     private $settings;
 
-    public function getSettings(): ServiceSettings
+    public function getSettings(): ServiceSettingsInterface
     {
-        return $this->settings instanceof ServiceSettings
+        return $this->settings instanceof ServiceSettingsInterface
             ? $this->settings
-            : new ServiceSettings();
+            : ServiceSettingsFactory::createHttpSettings();
     }
 
     public function setSettings(array $settings)
     {
-        $serviceSettings = new ServiceSettings();
+        $serviceSettings = ServiceSettingsFactory::createHttpSettings();
         $serviceSettings->setFields($settings);
         $this->settings = $serviceSettings;
     }

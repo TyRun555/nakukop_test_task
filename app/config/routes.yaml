@@ -27,3 +27,8 @@ set-grpc-settings:
     path: api/services/grpc/settings
     methods: PUT
     controller: App\Controller\Api\Services\GrpcService\GrpcServiceSettingsController::setSettings
+
+show-http-settings:
+    path: services/http
+    methods: GET|POST
+    controller: App\Controller\Api\Services\HttpService\HttpServiceSettingsController::settingsAction

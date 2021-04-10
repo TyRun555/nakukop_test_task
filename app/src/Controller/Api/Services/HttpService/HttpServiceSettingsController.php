@@ -19,14 +19,20 @@ class HttpServiceSettingsController extends BaseApiController
     {
         $httpServiceRequest = RequestFactory::createHttpRequest();
         $settings = $httpServiceRequest->send()->getResponse();
-        return $this->response($settings->getSettings()->getFields());
+        return $this->json($settings->getSettings()->getFields());
     }
 
     public function setSettings(Request $request)
     {
         $httpServiceRequest = RequestFactory::createHttpRequest();
         $settings = $httpServiceRequest->send($request->getContent())->getResponse();
-        return $this->response($settings->getSettings()->getFields());
+        return $this->json($settings->getSettings()->getFields());
+    }
+
+    public function settingsAction(Request $request)
+    {
+        $settings = json_decode($this->getSettings($request), true);
+        return $this->render('@service/http.html.twig', compact('settings'));
     }
 
 }
