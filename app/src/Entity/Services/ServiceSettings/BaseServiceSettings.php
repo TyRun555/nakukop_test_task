@@ -4,6 +4,8 @@
 namespace App\Entity\Services\ServiceSettings;
 
 
+use http\Exception\InvalidArgumentException;
+
 abstract class BaseServiceSettings implements ServiceSettingsInterface
 {
 
@@ -47,5 +49,6 @@ abstract class BaseServiceSettings implements ServiceSettingsInterface
                 $this->$name = $value;
             }
         }
+        throw new \TypeError("Fields value type validation failed!");
     }
 }

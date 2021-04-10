@@ -20,11 +20,17 @@
             <fieldset>
                 <legend>Fields</legend>
                 <label for="field1">field1</label>
-                <input type="text" name="fields[field1]" id="field1">
+                <input type="text" name="fields[field1]" id="field1" value="{{ settings.field1 }}">
                 <label for="field2">field2</label>
-                <input type="text" name="fields[field2]" id="field2">
-                <label for="field3">field3</label>
-                <input type="text" name="fields[field3]" id="field3">
+                <input type="text" name="fields[field2]" id="field2" value="{{ settings.field2 }}">
+                <legend>field3</legend>
+                {% if settings.field3 %}
+                {% for value in settings.field3 %}
+                    <input type="text" name="fields[field3][]" value="{{ value }}">
+                {% endfor %}
+                {% else %}
+                    <span>Settings does not exists</span>
+                {% endif %}
             </fieldset>
             <button type="submit">Submit</button>
         </form>

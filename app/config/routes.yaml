@@ -28,7 +28,17 @@ set-grpc-settings:
     methods: PUT
     controller: App\Controller\Api\Services\GrpcService\GrpcServiceSettingsController::setSettings
 
-show-http-settings:
+show-http-service-settings:
     path: services/http
     methods: GET|POST
-    controller: App\Controller\Api\Services\HttpService\HttpServiceSettingsController::settingsAction
+    controller: App\Controller\HttpServiceSettingsController::settingsAction
+
+show-rest-api-service-settings:
+    path: services/rest-api
+    methods: GET|POST
+    controller: App\Controller\RestApiServiceSettingsController::settingsAction
+
+show-g-rpc-service-settings:
+    path: services/g-rpc
+    methods: GET|POST
+    controller: App\Controller\GrpcServiceSettingsController::settingsAction

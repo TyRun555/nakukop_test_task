@@ -14,6 +14,7 @@ Test app for getting and setting the settings from 3 abstract microservices (htt
 **Look to the MakeFile for other useful commands**
  
 ## Usage
+### API
 The app provides several API endpoints for getting or setting the settings of the microservices:
 
 - GET|POST /api/services/http/settings
@@ -21,3 +22,10 @@ The app provides several API endpoints for getting or setting the settings of th
 - GET|POST /api/services/grpc/settings
 
 Response format **JSON**
+
+### From browser
+Use these urls
+
+- /service/http
+- /service/rest-api
+- /service/g-prc

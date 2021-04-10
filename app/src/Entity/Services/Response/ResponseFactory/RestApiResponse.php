@@ -6,17 +6,19 @@ namespace App\Entity\Services\Response\ResponseFactory;
 
 use App\Entity\Services\Response\ResponseInterface;
 use App\Entity\Services\ServiceSettings;
+use App\Entity\Services\ServiceSettings\ServiceSettingsFactory;
+use App\Entity\Services\ServiceSettings\ServiceSettingsInterface;
 
 class RestApiResponse implements ResponseInterface
 {
 
-    public function getSettings(): ServiceSettings
+    private ServiceSettingsInterface $settings;
+
+    public function getSettings(): ServiceSettingsInterface
     {
-        // TODO: Implement getSettings() method.
+        return isset($this->settings) && $this->settings instanceof ServiceSettingsInterface
+            ? $this->settings
+            : ServiceSettingsFactory::createHttpSettings();
     }
 
-    public function setSettings(array $settings)
-    {
-        // TODO: Implement setSettings() method.
-    }
 }

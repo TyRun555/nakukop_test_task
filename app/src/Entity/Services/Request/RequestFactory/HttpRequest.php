@@ -1,15 +1,11 @@
 <?php
-
-
 namespace App\Entity\Services\Request\RequestFactory;
 
 
 use App\Entity\Services\Response\ResponseFactory;
 use App\Entity\Services\Response\ResponseInterface;
 use App\Entity\Services\Request\RequestInterface;
-use Symfony\Component\HttpClient\Exception\TransportException;
 use Symfony\Component\HttpClient\HttpClient;
-use Symfony\Component\HttpKernel\Log\Logger;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
 class HttpRequest implements RequestInterface
@@ -18,7 +14,7 @@ class HttpRequest implements RequestInterface
     /**
      * @var \Symfony\Contracts\HttpClient\ResponseInterface
      */
-    private $response;
+    private \Symfony\Contracts\HttpClient\ResponseInterface $response;
 
     public function getEndPoint(): string
     {

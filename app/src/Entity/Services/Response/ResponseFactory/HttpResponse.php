@@ -11,11 +11,11 @@ use App\Entity\Services\ServiceSettings\ServiceSettingsInterface;
 
 class HttpResponse implements ResponseInterface
 {
-    private $settings;
+    private ServiceSettingsInterface $settings;
 
     public function getSettings(): ServiceSettingsInterface
     {
-        return $this->settings instanceof ServiceSettingsInterface
+        return isset($this->settings) && $this->settings instanceof ServiceSettingsInterface
             ? $this->settings
             : ServiceSettingsFactory::createHttpSettings();
     }
