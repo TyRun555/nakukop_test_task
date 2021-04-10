@@ -5,13 +5,13 @@ endif
 OPT =
 .PHONY: build clean
 
-COMPOSE = docker-compose -p tyrun-pilulka \
+COMPOSE = docker-compose -p testapp \
 	-f ./docker/environment/${STAGE}/docker-compose.yml \
 	--project-directory ./docker/environment/${STAGE}
 
-RUN_IN_PHP = docker exec -i tyrun-pilulka-php-fpm
-RUN_IN_REDIS = docker exec -it tyrun-pilulka-percona
-RUN_IN_NGINX = docker exec -i tyrun-pilulka-nginx
+RUN_IN_PHP = docker exec -i testapp-php-fpm
+RUN_IN_REDIS = docker exec -it testapp-redis
+RUN_IN_NGINX = docker exec -i testapp-nginx
 
 #Build and run containers then run composer update
 build:

@@ -8,7 +8,7 @@ services:
       args:
         - USER_ID
         - GROUP_ID
-    container_name: tyrun-pilulka-php-fpm
+    container_name: testapp-php-fpm
     restart: always
     volumes:
       #app files
@@ -28,7 +28,7 @@ services:
       args:
         - USER_ID
         - GROUP_ID
-    container_name: tyrun-pilulka-nginx
+    container_name: testapp-nginx
     restart: always
     volumes:
       #app files
@@ -37,7 +37,7 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./../../nginx/conf/nginx.conf:/etc/nginx/nginx.conf:ro
       #logs volume
-      - legend-nginx-logs:/var/log/nginx:rw
+      - testapp-nginx-logs:/var/log/nginx:rw
     ports:
       - 8000:80
     depends_on:
@@ -47,12 +47,12 @@ services:
     build:
       context: ../../redis
       dockerfile: Dockerfile
-    container_name: tyrun-pilulka-redis
+    container_name: testapp-redis
     restart: always
     volumes:
       #data volume
-      - legend-redis:/data
+      - testapp-redis:/data
 
 volumes:
-  legend-nginx-logs:
-  legend-redis:
+  testapp-nginx-logs:
+  testapp-redis:
