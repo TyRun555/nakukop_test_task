@@ -1,6 +1,6 @@
 <?php
 
-use App\Kernel;
+use App\Entity\Services\Request\Kernel;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;
