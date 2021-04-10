@@ -7,5 +7,5 @@ use App\Entity\Services\Response\ResponseInterface;
 interface RequestInterface {
     public function getEndPoint();
     public function send();
-    public function response(): ResponseInterface;
+    public function getResponse(): ResponseInterface;
 }

@@ -9,14 +9,19 @@ use App\Entity\Services\ServiceSettings;
 
 class HttpResponse implements ResponseInterface
 {
+    private $settings;
 
     public function getSettings(): ServiceSettings
     {
-        // TODO: Implement getSettings() method.
+        return $this->settings instanceof ServiceSettings
+            ? $this->settings
+            : new ServiceSettings();
     }
 
     public function setSettings(array $settings)
     {
-        // TODO: Implement setSettings() method.
+        $serviceSettings = new ServiceSettings();
+        $serviceSettings->setFields($settings);
+        $this->settings = $serviceSettings;
     }
 }

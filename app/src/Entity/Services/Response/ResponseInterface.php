@@ -8,5 +8,4 @@ interface ResponseInterface {
 
     public function getSettings(): ServiceSettings;
 
-    public function setSettings(array $settings);
 }

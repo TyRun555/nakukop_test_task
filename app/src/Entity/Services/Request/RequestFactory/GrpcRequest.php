@@ -7,29 +7,36 @@ use App\Entity\Services\Response\ResponseInterface;
 use App\Entity\Services\Response\ResponseFactory;
 use App\Entity\Services\Request\RequestInterface;
 use http\Client;
+use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
 class GrpcRequest extends Request implements RequestInterface
 {
     private $response;
 
-    public function getEndPoint()
+    public function getEndPoint(): string
     {
-        // TODO: Implement getEndPoint() method.
+        return 'urlToTheService';
     }
 
-    public function send(array $request = []): GrpcRequest
+    public function send(array $request = []): RequestInterface
     {
-        $client = new Client();
-        $client->request(
-            'GET',
-            'urlToGrpcMicroService'
-        );
-        $this->response = $client->getResponse();
+        $client = HttpClient::create();
+        try {
+            $response = $client->request(
+                'GET',
+                $this->getEndPoint()
+            );
+            $this->response = $response;
+
+        } catch (TransportExceptionInterface $e) {
+            //TODO handle exception
+        }
         return $this;
     }
 
-    public function response(): ResponseInterface
+    public function getResponse(): ResponseInterface
     {
         $response = ResponseFactory::createGrpcResponse();
         $response->setSettings($this->response);

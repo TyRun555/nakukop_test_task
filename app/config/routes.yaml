@@ -15,15 +15,15 @@ get-grpc-settings:
 
 set-http-service-settings:
     path: api/services/http/settings
-    methods: POST
+    methods: PUT
     controller: App\Controller\Api\Services\HttpService\HttpServiceSettingsController::setSettings
 
 set-rest-api-service-settings:
     path: api/services/restapi/settings
-    methods: POST
+    methods: PUT
     controller: App\Controller\Api\Services\RestApiService\RestApiServiceSettingsController::setSettings
 
 set-grpc-settings:
     path: api/services/grpc/settings
-    methods: POST
+    methods: PUT
     controller: App\Controller\Api\Services\GrpcService\GrpcServiceSettingsController::setSettings
