@@ -9,12 +9,12 @@ RUN apt install -y nano git libzip-dev zip curl
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 # Add new extensions here
-RUN pecl install xdebug-3.0.4 && docker-php-ext-enable xdebug
+RUN pecl install xdebug-3.0.4 grpc && docker-php-ext-enable xdebug grpc
 RUN docker-php-ext-install zip
 
 
 RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
-    install-php-extensions http curl
+    install-php-extensions http
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN groupadd -g "$GROUP_ID" testapp
