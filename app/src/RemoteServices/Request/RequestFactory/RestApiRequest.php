@@ -1,12 +1,12 @@
 <?php
 
 
-namespace App\Entity\Services\Request\RequestFactory;
+namespace App\RemoteServices\Request\RequestFactory;
 
 
-use App\Entity\Services\Response\ResponseFactory;
-use App\Entity\Services\Response\ResponseInterface;
-use App\Entity\Services\Request\RequestInterface;
+use App\RemoteServices\Response\ResponseFactory;
+use App\RemoteServices\Response\ResponseInterface;
+use App\RemoteServices\Request\RequestInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 

@@ -1,8 +1,8 @@
 <?php
-namespace App\Entity\Services\Request;
+namespace App\RemoteServices\Request;
 
 
-use App\Entity\Services\Response\ResponseInterface;
+use App\RemoteServices\Response\ResponseInterface;
 
 interface RequestInterface {
     public function getEndPoint();

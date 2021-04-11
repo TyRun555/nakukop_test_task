@@ -19,7 +19,7 @@ class UserTest extends PHPUnit\Framework\TestCase
     public function testPasswordHashing()
     {
         $hasher = $this->prophet->prophesize('App\Security\Hasher');
-        $user   = new App\Entity\Services\Request\Entity\User($hasher->reveal());
+        $user   = new App\RemoteServices\Request\Entity\User($hasher->reveal());
 
         $hasher->generateHash($user, 'qwerty')->willReturn('hashed_pass');
 

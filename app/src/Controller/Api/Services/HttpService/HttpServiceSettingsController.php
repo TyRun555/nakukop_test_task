@@ -6,9 +6,9 @@ namespace App\Controller\Api\Services\HttpService;
 
 
 use App\Controller\Api\Base\BaseApiController;
-use App\Entity\Services\Request\RequestFactory;
-use App\Entity\Services\Request\RequestFactory\HttpRequest;
-use App\Entity\Services\ServiceSettings\ServiceSettingsFactory;
+use App\RemoteServices\Request\RequestFactory;
+use App\RemoteServices\Request\RequestFactory\HttpRequest;
+use App\RemoteServices\ServiceSettings\ServiceSettingsFactory;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

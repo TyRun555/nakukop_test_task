@@ -4,7 +4,7 @@
 namespace App\Controller;
 
 
-use App\Entity\Services\ServiceSettings\ServiceSettingsFactory;
+use App\RemoteServices\ServiceSettings\ServiceSettingsFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

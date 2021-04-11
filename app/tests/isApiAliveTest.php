@@ -1,5 +1,5 @@
 <?php
-namespace App\Entity\Services\Request\Tests;
+namespace App\RemoteServices\Request\Tests;
 
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 

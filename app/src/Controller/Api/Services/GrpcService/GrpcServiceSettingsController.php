@@ -6,7 +6,7 @@ namespace App\Controller\Api\Services\GrpcService;
 
 
 use App\Controller\Api\Base\BaseApiController;
-use App\Entity\Services\Request\RequestFactory;
+use App\RemoteServices\Request\RequestFactory;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

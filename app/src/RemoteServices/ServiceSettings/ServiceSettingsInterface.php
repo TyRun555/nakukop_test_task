@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Entity\Services\ServiceSettings;
+namespace App\RemoteServices\ServiceSettings;
 
 interface ServiceSettingsInterface {
     function validate(array $fields): bool;

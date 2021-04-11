@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\Entity\Services\Response\ResponseFactory;
+namespace App\RemoteServices\Response\ResponseFactory;
 
 
-use App\Entity\Services\Response\ResponseInterface;
-use App\Entity\Services\ServiceSettings;
-use App\Entity\Services\ServiceSettings\ServiceSettingsFactory;
-use App\Entity\Services\ServiceSettings\ServiceSettingsInterface;
+use App\RemoteServices\Response\ResponseInterface;
+use App\RemoteServices\ServiceSettings;
+use App\RemoteServices\ServiceSettings\ServiceSettingsFactory;
+use App\RemoteServices\ServiceSettings\ServiceSettingsInterface;
 
 class HttpResponse implements ResponseInterface
 {
@@ -20,10 +20,10 @@ class HttpResponse implements ResponseInterface
             : ServiceSettingsFactory::createHttpSettings();
     }
 
-    public function setSettings(array $settings)
+    public function setSettings(array $fields)
     {
         $serviceSettings = ServiceSettingsFactory::createHttpSettings();
-        $serviceSettings->setFields($settings);
+        $serviceSettings->setFields($fields);
         $this->settings = $serviceSettings;
     }
 }

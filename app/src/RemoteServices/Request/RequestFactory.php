@@ -1,12 +1,12 @@
 <?php
 
 
-namespace App\Entity\Services\Request;
+namespace App\RemoteServices\Request;
 
 
-use App\Entity\Services\Request\RequestFactory\GrpcRequest;
-use App\Entity\Services\Request\RequestFactory\HttpRequest;
-use App\Entity\Services\Request\RequestFactory\RestApiRequest;
+use App\RemoteServices\Request\RequestFactory\GrpcRequest;
+use App\RemoteServices\Request\RequestFactory\HttpRequest;
+use App\RemoteServices\Request\RequestFactory\RestApiRequest;
 
 class RequestFactory
 {

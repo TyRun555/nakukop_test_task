@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\Entity\Services\Response;
+namespace App\RemoteServices\Response;
 
 
-use App\Entity\Services\Response\ResponseFactory\GrpcResponse;
+use App\RemoteServices\Response\ResponseFactory\GrpcResponse;
 
-use App\Entity\Services\Response\ResponseFactory\RestApiResponse;
-use App\Entity\Services\Response\ResponseFactory\HttpResponse;
+use App\RemoteServices\Response\ResponseFactory\RestApiResponse;
+use App\RemoteServices\Response\ResponseFactory\HttpResponse;
 
 class ResponseFactory
 {

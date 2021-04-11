@@ -1,19 +1,20 @@
 <?php
+namespace App\RemoteServices\Request\RequestFactory;
 
-namespace App\Entity\Services\Request\RequestFactory;
 
-
-use App\Entity\Services\Response\ResponseInterface;
-use App\Entity\Services\Response\ResponseFactory;
-use App\Entity\Services\Request\RequestInterface;
-use http\Client;
+use App\RemoteServices\Response\ResponseFactory;
+use App\RemoteServices\Response\ResponseInterface;
+use App\RemoteServices\Request\RequestInterface;
 use Symfony\Component\HttpClient\HttpClient;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
-class GrpcRequest extends Request implements RequestInterface
+class HttpRequest implements RequestInterface
 {
-    private $response;
+
+    /**
+     * @var \Symfony\Contracts\HttpClient\ResponseInterface
+     */
+    private \Symfony\Contracts\HttpClient\ResponseInterface $response;
 
     public function getEndPoint(): string
     {
@@ -38,8 +39,14 @@ class GrpcRequest extends Request implements RequestInterface
 
     public function getResponse(): ResponseInterface
     {
-        $response = ResponseFactory::createGrpcResponse();
-        $response->setSettings($this->response);
+        try {
+            $response = json_decode($this->response->getContent(), true);
+            $httpResponse = ResponseFactory::createHttpResponse();
+            $httpResponse->setSettings($response);
+        } catch (\Throwable $e) {
+            return ResponseFactory::createHttpResponse();
+        }
+
         return $response;
     }
 }

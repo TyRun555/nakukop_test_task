@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Entity\Services\Request\Tests\Application;
+namespace App\RemoteServices\Request\Tests\Application;
 
 
 class GetServicesSettingsTest extends \Liip\FunctionalTestBundle\Test\WebTestCase

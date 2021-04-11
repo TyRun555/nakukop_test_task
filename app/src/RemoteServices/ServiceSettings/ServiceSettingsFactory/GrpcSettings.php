@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Entity\Services\ServiceSettings\ServiceSettingsFactory;
+namespace App\RemoteServices\ServiceSettings\ServiceSettingsFactory;
 
-use App\Entity\Services\ServiceSettings\BaseServiceSettings;
-use App\Entity\Services\ServiceSettings\ServiceSettingsInterface;
+use App\RemoteServices\ServiceSettings\BaseServiceSettings;
+use App\RemoteServices\ServiceSettings\ServiceSettingsInterface;
 
 /**
  * [field1: string, field2: bool, field3: int]

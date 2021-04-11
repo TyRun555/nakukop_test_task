@@ -1,12 +1,10 @@
 <?php
+namespace App\RemoteServices\ServiceSettings;
 
 
-namespace App\Entity\Services\ServiceSettings;
-
-
-use App\Entity\Services\ServiceSettings\ServiceSettingsFactory\GrpcSettings;
-use App\Entity\Services\ServiceSettings\ServiceSettingsFactory\HttpSettings;
-use App\Entity\Services\ServiceSettings\ServiceSettingsFactory\RestApiSettings;
+use App\RemoteServices\ServiceSettings\ServiceSettingsFactory\GrpcSettings;
+use App\RemoteServices\ServiceSettings\ServiceSettingsFactory\HttpSettings;
+use App\RemoteServices\ServiceSettings\ServiceSettingsFactory\RestApiSettings;
 
 class ServiceSettingsFactory
 {

@@ -1,10 +1,6 @@
 <?php
+namespace App\RemoteServices\ServiceSettings;
 
-
-namespace App\Entity\Services\ServiceSettings;
-
-
-use http\Exception\InvalidArgumentException;
 
 abstract class BaseServiceSettings implements ServiceSettingsInterface
 {
